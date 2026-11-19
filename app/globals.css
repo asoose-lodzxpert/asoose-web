@@ -1,0 +1,77 @@
+@import "tailwindcss";
+
+@theme {
+  /* Brand — sampled from the Asoose logo */
+  --color-brand-50: #ecf9fc;
+  --color-brand-100: #d1f0f7;
+  --color-brand-200: #a6e1ef;
+  --color-brand-300: #6dcbe2;
+  --color-brand-400: #36b2d0;
+  --color-brand-500: #1a9fc0;
+  --color-brand-600: #157f9c;
+  --color-brand-700: #15667e;
+  --color-brand-800: #175468;
+  --color-brand-900: #173f4e;
+  --color-brand-950: #0b2733;
+
+  --color-accent-50: #fdf8eb;
+  --color-accent-100: #faedc8;
+  --color-accent-300: #f0c55a;
+  --color-accent-400: #ebb53a;
+  --color-accent-500: #e5a823;
+  --color-accent-600: #c98617;
+
+  --color-ink: #0b1620;
+
+  --font-sans: var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;
+
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-float-slow: float 8s ease-in-out infinite;
+
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #ffffff;
+  color: var(--color-ink);
+}
+
+/* Subtle dotted grid used behind hero */
+.bg-grid {
+  background-image: radial-gradient(
+    circle at 1px 1px,
+    rgb(11 22 32 / 0.07) 1px,
+    transparent 0
+  );
+  background-size: 24px 24px;
+}
+
+/* FAQ chevron rotation */
+details[open] .faq-chevron {
+  transform: rotate(180deg);
+}
+details summary::-webkit-details-marker {
+  display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .animate-float,
+  .animate-float-slow {
+    animation: none;
+  }
+}
